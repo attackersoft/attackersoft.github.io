@@ -1,0 +1,148 @@
+﻿@charset "utf-8";
+
+
+/* 背景色を強制白にする。そのほかの背景色指定は開発用*/
+*{
+background-color: #ffffff !important;
+}
+
+html{
+text-align: center;/* 基本的に、表示物はセンタリングする*/
+background-color: #99cc00;
+}
+
+body{
+width: 100vw;/* 基本的に横幅いっぱいに表示する*/
+margin: 0;
+
+padding-top: 10px;
+padding-bottom: 10px;
+padding-left: 10px;
+padding-right: 20px;
+
+box-sizing: border-box;
+background-color: #99ff00;
+}
+
+#All{
+width: 100%;
+text-align: center;
+}
+
+#WidthLimit{
+max-width: 1200px; /* 際限なく大きくならないようにする*/
+min-width: 770px;  /*際限なく小さくならないようにする。フォントの小ささには限界がある*/
+margin: 0px auto; /* ブロックのセンタリング方法*/
+background-color: #ffffff;
+}
+
+/* スクリーンの横幅によってフォントサイズを分岐*/
+@media screen and (max-width:800px) {
+	#All{
+	font-size: 12px;
+	}
+	#AppTitle{
+	font-size: 14.66px;
+	}
+}
+@media screen and (min-width:800px) and (max-width:1200px) {
+	#All{
+	font-size: 1.5vw;
+	}
+	#AppTitle{
+	font-size: 1.833vw;
+	}
+}
+@media screen and (min-width:1200px) {
+	#All{
+	font-size: 18px;
+	}
+	#AppTitle{
+	font-size: 22px;
+	}
+}
+
+#Top{
+}
+
+	#TopImage{
+	width: 100%;
+	padding-top: 56.25%;
+	background-image: url("../img/top.png");/* content方式だと、読み込みが完了するまでサイズが決まらないため、画面がびかっとなる*/
+	background-size: cover;
+	}
+
+
+#Center{
+background-color: #99ddcc;
+}
+	#AppInfo{
+	width: 80%;
+	background-color: #cc3333;
+	margin: 0px auto;
+	padding: 10px;
+	}
+		#AppIcon{
+		width: 12%;
+		content: url("../img/appicon.png");
+		display: inline-block;
+		vertical-align:  middle;
+		}
+		#ReleaseInfo{
+		display: inline-block;
+		text-align: left;
+		background-color: #cc3366;
+		vertical-align:  top;
+		color: #777777;
+		}
+			#AppTitle{
+			color: #555555;
+			}
+
+		/*
+		#ButtonList{
+		}
+			#ButtonGooglePlay{
+			}
+			#ButtonAppStore{
+			}
+
+		#ButtonTrialVersion{
+		}
+		*/
+
+	#AppScreenShotList{
+	background-color: #cc3399;
+	padding: 10px;
+	box-sizing: border-box;
+	}
+		.AppScreenShot{
+		margin: 0px 0px;
+		padding: 0px;
+		width: 19%;
+		display: inline-block;
+		}
+		#AppScreenShot1{
+		content: url("../img/screenshot/1.png");
+		}
+		#AppScreenShot2{
+		content: url("../img/screenshot/2.png");
+		}
+		#AppScreenShot3{
+		content: url("../img/screenshot/3.png");
+		}
+		#AppScreenShot4{
+		content: url("../img/screenshot/5.png");
+		}
+		#AppScreenShot5{
+		content: url("../img/screenshot/4.png");
+		}
+
+#Footer{
+background-color: #ffcc00;
+}
+	#Copyright{
+	color: #777777;
+	}
+
+

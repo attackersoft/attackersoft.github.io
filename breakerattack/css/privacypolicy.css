@@ -1,0 +1,40 @@
+﻿@charset "utf-8";
+
+
+/* 背景色を強制白にする。そのほかの背景色指定は開発用*/
+*{
+background-color: #ffffff !important;
+}
+
+html{
+text-align: center;/* 基本的に、表示物はセンタリングする*/
+background-color: #99cc00;
+}
+
+body{
+width: 100vw;/* 基本的に横幅いっぱいに表示する*/
+margin: 0;
+
+padding-top: 10px;
+padding-bottom: 10px;
+padding-left: 10px;
+padding-right: 20px;
+
+box-sizing: border-box;
+background-color: #99ff00;
+}
+
+#All{
+width: 100%;
+}
+
+#WidthLimit{
+max-width: 700px; /* 際限なく大きくならないようにする*/
+margin: 0px auto; /* ブロックのセンタリング方法*/
+background-color: #ffffff;
+text-align: left;
+}
+
+h2{
+text-align: center;
+}
