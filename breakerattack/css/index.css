@@ -31,21 +31,12 @@ text-align: center;
 
 #WidthLimit{
 max-width: 1200px; /* 際限なく大きくならないようにする*/
-min-width: 770px;  /*際限なく小さくならないようにする。フォントの小ささには限界がある*/
 margin: 0px auto; /* ブロックのセンタリング方法*/
 background-color: #ffffff;
 }
 
 /* スクリーンの横幅によってフォントサイズを分岐*/
-@media screen and (max-width:800px) {
-	#All{
-	font-size: 12px;
-	}
-	#AppTitle{
-	font-size: 14.66px;
-	}
-}
-@media screen and (min-width:800px) and (max-width:1200px) {
+@media screen and (max-width:1200px) {
 	#All{
 	font-size: 1.5vw;
 	}
