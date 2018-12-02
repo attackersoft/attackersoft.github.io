@@ -105,29 +105,31 @@ background-color: #99ddcc;
 
 	#AppScreenShotList{
 	background-color: #cc3399;
-	padding: 10px;
 	box-sizing: border-box;
+	padding-top: 1%;
 	}
 		.AppScreenShot{
 		margin: 0px 0px;
 		padding: 0px;
 		width: 19%;
+		padding-top: 35.83%;
 		display: inline-block;
+		background-size: cover;
 		}
 		#AppScreenShot1{
-		content: url("../img/screenshot/1.png");
+		background-image: url("../img/screenshot/1.png");
 		}
 		#AppScreenShot2{
-		content: url("../img/screenshot/2.png");
+		background-image: url("../img/screenshot/2.png");
 		}
 		#AppScreenShot3{
-		content: url("../img/screenshot/3.png");
+		background-image: url("../img/screenshot/3.png");
 		}
 		#AppScreenShot4{
-		content: url("../img/screenshot/5.png");
+		background-image: url("../img/screenshot/5.png");
 		}
 		#AppScreenShot5{
-		content: url("../img/screenshot/4.png");
+		background-image: url("../img/screenshot/4.png");
 		}
 
 #Footer{
