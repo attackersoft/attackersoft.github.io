@@ -71,7 +71,8 @@ background-color: #99ddcc;
 	width: 80%;
 	background-color: #cc3333;
 	margin: 0px auto;
-	padding: 10px;
+	padding-top: 3%;
+	padding-bottom: 1%;
 	}
 		#AppIcon{
 		width: 12%;
@@ -132,6 +133,18 @@ background-color: #99ddcc;
 #Footer{
 background-color: #ffcc00;
 }
+	#Contact{
+	padding-top: 1.2%;
+	color: #555555;
+	}
+
+	#Image{
+	width: 22%;
+	margin: 0px auto;
+	padding-bottom: 2.2%;
+	content: url("../img/image.png");
+	}
+
 	#Copyright{
 	color: #777777;
 	}
