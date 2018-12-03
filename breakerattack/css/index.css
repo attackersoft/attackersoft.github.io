@@ -76,7 +76,9 @@ background-color: #99ddcc;
 	}
 		#AppIcon{
 		width: 12%;
-		content: url("../img/appicon.png");
+		padding-top: 12%;
+		background-image: url("../img/appicon.png");
+		background-size: cover;
 		display: inline-block;
 		vertical-align:  middle;
 		}
@@ -143,8 +145,10 @@ background-color: #ffcc00;
 	#Image{
 	width: 20%;
 	margin: 0px auto;
-	padding-bottom: 2.2%;
-	content: url("../img/image.png");
+	padding-bottom: 5%;
+	background-image: url("../img/image.png");
+	background-size: contain;
+	background-repeat: no-repeat;
 	}
 
 	#Copyright{
