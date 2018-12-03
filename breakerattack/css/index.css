@@ -59,7 +59,7 @@ background-color: #ffffff;
 	#TopImage{
 	width: 100%;
 	padding-top: 56.25%;
-	background-image: url("../img/top.png");/* content方式だと、読み込みが完了するまでサイズが決まらないため、画面がびかっとなる*/
+	background-image: url("../img/top.png");/* content方式だと、読み込みが完了するまでサイズが決まらないため、画面がびかっとなる。しかもIEだと表示されない*/
 	background-size: cover;
 	}
 
