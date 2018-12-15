@@ -40,21 +40,6 @@
 				e.preventDefault();
 			}, passiveSupported ? { passive: false } : false);
 
-			//回転禁止
-			window.addEventListener("orientationchange", function(){
-				var deg;
-				switch (window.orientation) {
-					case -90:
-						deg = 90;  break;
-					case 0:
-						deg = 0;   break;
-					case 90:
-						deg = -90; break;
-					case 180:
-						deg = 180; break;
-				}
-				document.documentElement.style.transform = "rotate(" + deg + "deg)";
-			}, passiveSupported ? { passive: false } : false);
 		}
 
 
@@ -121,17 +106,6 @@
 					return isFillWidth;
 				}
 
-				function renewDebuglog(){
-					var all = document.getElementById("All");
-					var x = all.clientWidth;
-					var y = all.clientHeight;
-
-					var xg = gameFrame.clientWidth;
-					var yg = gameFrame.clientHeight;
-
-					document.getElementById("Fix").innerHTML = "横" + x + "px，縦" + y + "px: " + "横" + xg + "px，縦" + yg + "px";
-				}
-
 
 				//ウィンドウサイズ変更時のコールバック登録
 				{
@@ -159,11 +133,6 @@
 							bg.style.width=(gameFrame.clientHeight*bgRate)+"px";
 							bg.style.height=(gameFrame.clientHeight*bgRate)+"px";
 						}
-
-						//変な位置で停止しないように
-						window.scrollTo(0,0);
-
-						renewDebuglog();
 
 					}
 
@@ -193,8 +162,6 @@
 			</div>
 
 		</div>
-
-		<div id="Fix" style="position:fixed; top:0%; color:red;">test</div>
 
 	</body>
 
