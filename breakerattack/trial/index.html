@@ -104,11 +104,14 @@
 				}
 
 				function renewDebuglog(){
-				var all = document.getElementById("All");
+					var all = document.getElementById("All");
 					var x = all.clientWidth;
 					var y = all.clientHeight;
 
-					document.getElementById("Fix").innerHTML = "横" + x + "px，縦" + y + "px";
+					var xg = gameFrame.clientWidth;
+					var yg = gameFrame.clientHeight;
+
+					document.getElementById("Fix").innerHTML = "横" + x + "px，縦" + y + "px: " + "横" + xg + "px，縦" + yg + "px";
 				}
 
 
@@ -177,7 +180,7 @@
 
 		</div>
 
-		<div id="Fix" style="position:fixed; top:0%;">test</div>
+		<div id="Fix" style="position:fixed; top:0%; color:red;">test</div>
 
 	</body>
 
