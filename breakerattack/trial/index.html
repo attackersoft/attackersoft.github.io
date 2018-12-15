@@ -106,18 +106,6 @@
 					return isFillWidth;
 				}
 
-				//function renewDebuglog(){
-				//	var all = document.getElementById("All");
-				//	var x = all.clientWidth;
-				//	var y = all.clientHeight;
-
-				//	var xg = gameFrame.clientWidth;
-				//	var yg = gameFrame.clientHeight;
-
-				//	document.getElementById("Fix").innerHTML = "横" + x + "px，縦" + y + "px: " + "横" + xg + "px，縦" + yg + "px";
-				//}
-
-
 				//ウィンドウサイズ変更時のコールバック登録
 				{
 					var bg=document.getElementById("Bg");
@@ -145,15 +133,10 @@
 							bg.style.height=(gameFrame.clientHeight*bgRate)+"px";
 						}
 
-						//renewDebuglog();
-
-						//document.getElementById('viewport').setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, maximum-scale=1');
-
 					}
 
 					window.addEventListener('resize',resizeCallback,false);
 					resizeCallback();
-					
 					
 				}
 			}
@@ -177,8 +160,6 @@
 			</div>
 
 		</div>
-
-		<div id="Fix" style="position:fixed; top:0%; color:red;"></div>
 
 	</body>
 
