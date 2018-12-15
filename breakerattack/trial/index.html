@@ -138,6 +138,11 @@
 
 					window.addEventListener('resize',resizeCallback,false);
 					resizeCallback();
+					
+					//変な位置で停止しないように
+					window.addEventListener("orientationchange", function() {
+						window.scrollTo(0,0);
+					});
 				}
 			}
 		}
