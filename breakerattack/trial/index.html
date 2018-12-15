@@ -24,21 +24,28 @@
 
 	<script>
 
-		////スマホスクロール禁止
-		//{
-		//	var passiveSupported = false;
-		//	try {
-		//		document.addEventListener("test", null, Object.defineProperty({}, "passive", {
-		//			get: function() {
-		//				passiveSupported = true;
-		//			}
-		//		}));
-		//	} catch(err) {}
+		//スマホ用処理
+		{
+			var passiveSupported = false;
+			try {
+				document.addEventListener("test", null, Object.defineProperty({}, "passive", {
+					get: function() {
+						passiveSupported = true;
+					}
+				}));
+			} catch(err) {}
+			
+			//スマホスクロール禁止
+			document.addEventListener('touchmove', function listener(e) {
+				e.preventDefault();
+			}, passiveSupported ? { passive: false } : false);
 
-		//	document.addEventListener('touchmove', function listener(e) {
-		//		e.preventDefault();
-		//	}, passiveSupported ? { passive: false } : false);
-		//}
+			//回転禁止
+			document.addEventListener("orientationchange", function() {
+				e.preventDefault();
+			}, passiveSupported ? { passive: false } : false);
+		}
+
 
 		window.onload=function() {
 
@@ -152,11 +159,7 @@
 					window.addEventListener('resize',resizeCallback,false);
 					resizeCallback();
 					
-					//変な位置で停止しないように
-					window.addEventListener("orientationchange", function() {
-						window.scrollTo(0,0);
-						renewDebuglog();
-					});
+					
 				}
 			}
 		}
