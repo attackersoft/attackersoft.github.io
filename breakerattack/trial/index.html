@@ -41,7 +41,7 @@
 			}, passiveSupported ? { passive: false } : false);
 
 			//回転禁止
-			document.addEventListener("orientationchange", function listener(e) {
+			window.addEventListener("orientationchange", function listener(e) {
 				e.preventDefault();
 			}, passiveSupported ? { passive: false } : false);
 		}
