@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="ja">
 <head>
@@ -23,8 +23,8 @@
 	<title>ブレイカーアタック - 体験ページ</title>
 
 	<script>
-
-		//スマホ用処理
+	
+		//スマホスクロール禁止
 		{
 			var passiveSupported = false;
 			try {
@@ -34,14 +34,11 @@
 					}
 				}));
 			} catch(err) {}
-			
-			//スマホスクロール禁止
+
 			document.addEventListener('touchmove', function listener(e) {
 				e.preventDefault();
 			}, passiveSupported ? { passive: false } : false);
-
 		}
-
 
 		window.onload=function() {
 
@@ -106,6 +103,7 @@
 					return isFillWidth;
 				}
 
+
 				//ウィンドウサイズ変更時のコールバック登録
 				{
 					var bg=document.getElementById("Bg");
@@ -137,7 +135,6 @@
 
 					window.addEventListener('resize',resizeCallback,false);
 					resizeCallback();
-					
 				}
 			}
 		}
@@ -147,7 +144,6 @@
 </head>
 
 	<body>
-
 
 		<div id="All">
 
