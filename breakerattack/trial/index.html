@@ -131,6 +131,9 @@
 							bg.style.height=(gameFrame.clientHeight*bgRate)+"px";
 						}
 
+						//変な位置で停止しないように
+						window.scrollTo(0,0);
+
 					}
 
 					window.addEventListener('resize',resizeCallback,false);
