@@ -32,6 +32,8 @@
 			var gameAspect=576/1024;
 			var gameInstance=UnityLoader.instantiate("Game","Build/Trial.json",{ onProgress: UnityProgress });
 
+			gameFrame.style.borderRadius = "0.5em";
+
 			//Unity側からgameInstanceを使うため、ここに代入しておく。
 			UnityLoader.gameInstance=gameInstance;
 
