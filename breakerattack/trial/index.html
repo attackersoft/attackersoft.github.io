@@ -104,8 +104,9 @@
 				}
 
 				function renewDebuglog(){
-					var x = window.pageXOffset;
-					var y = window.pageYOffset;
+				var all = document.getElementById("All");
+					var x = all.clientWidth;
+					var y = all.clientHeight;
 
 					document.getElementById("Fix").innerHTML = "横" + x + "px，縦" + y + "px";
 				}
