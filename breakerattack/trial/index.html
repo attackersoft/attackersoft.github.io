@@ -47,11 +47,6 @@
 			//フルスクリーン禁止
 			UnityLoader.SystemInfo.hasFullscreen=0;
 
-			//ロゴクリックイベント
-			document.getElementById("Logo").onclick=function() {
-				location.href="https://attackersoft.github.io/breakerattack";
-			}
-
 			//クリックタイミングでしかポップアップなどが出来ないため、
 			//ゲーム画面クリックイベントを、Unityに伝える
 			gameFrame.onclick = function(){
@@ -137,7 +132,7 @@
 		<div id="All">
 
 			<div id="Bg">
-				<div id="Logo"></div>
+				<a id="Logo" href="https://attackersoft.github.io/breakerattack"></a>
 			</div>
 
 			<div id="GameFrame">
