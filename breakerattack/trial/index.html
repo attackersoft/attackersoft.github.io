@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+
+	<meta name="keywords" content="ブレイカーアタック,ブレイカー,アタック,ファンタジー,大剣,魔法,無料アプリ,無料ゲーム,体験版">
+	<meta name="description" content="スマホアプリ「ブレイカーアタック」の体験ページです。UnityWebGLを用いているので、一部のブラウザと、スマホブラウザでは動作しません。">
+	<meta name="author" content="AttackerSoft">
+	<meta name="copyright" content="&copy; AttackerSoft">
+
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="shortcut icon" href="TemplateData/favicon.ico">
+	<link rel="stylesheet" href="TemplateData/style.css">
+	<script src="TemplateData/UnityProgress.js"></script>
+	<script src="Build/UnityLoader.js"></script>
+
+	<title>ブレイカーアタック - 体験ページ</title>
+
+	<script>
+
+
+
+		window.onload=function() {
+
+			var gameFrame=document.getElementById("GameFrame");
+			var gameAspect=576/1024;
+			var gameInstance=UnityLoader.instantiate("Game","Build/Trial.json",{ onProgress: UnityProgress });
+
+			//Unity側からgameInstanceを使うため、ここに代入しておく。
+			UnityLoader.gameInstance=gameInstance;
+
+			//Unityにメッセージを飛ばす
+			function SendMessageToUnity(messageKey,messageTable) {
+				if(!gameInstance.SendMessageToUnity){
+					return;
+				}
+				gameInstance.SendMessageToUnity(messageKey,messageTable);
+			}
+
+
+			//フルスクリーン禁止
+			UnityLoader.SystemInfo.hasFullscreen=0;
+
+			//ロゴクリックイベント
+			document.getElementById("Logo").onclick=function() {
+				location.href="https://attackersoft.github.io/breakerattack";
+			}
+
+			//クリックタイミングでしかポップアップなどが出来ないため、
+			//ゲーム画面クリックイベントを、Unityに伝える
+			gameFrame.onclick = function(){
+
+				//タイミング的に、ちょっと遅らせないと、
+				//Unity側のボタンクリックイベントが拾えない。
+				window.setTimeout( function(){
+					SendMessageToUnity("onclick");
+				}, 20 );
+			}
+
+			//リサイズ処理
+			{
+
+				//キャンバスを親と同じサイズに設定する
+				function canvasFitParent(canvas) {
+					var parent=canvas.parentNode;
+					canvas.setAttribute('width',parent.clientWidth);
+					canvas.setAttribute('height',parent.clientHeight);
+				}
+
+				//要素を親要素の中で、レターボックスサイズに設定する。
+				function letterBox(element,aspect) {
+					var parent=element.parentNode;
+					var aspectParent=parent.clientWidth/parent.clientHeight;
+
+					var isFillWidth=aspectParent<aspect;
+
+					if(isFillWidth) {
+						element.style.width=(parent.clientWidth)+"px";
+						element.style.height=(parent.clientWidth/aspect)+"px";
+					}
+					else {
+						element.style.width=(parent.clientHeight*aspect)+"px";
+						element.style.height=(parent.clientHeight)+"px";
+					}
+
+					return isFillWidth;
+				}
+
+
+				//ウィンドウサイズ変更時のコールバック登録
+				{
+					var bg=document.getElementById("Bg");
+					function resizeCallback() {
+
+						//ゲームフレームリサイズ
+						{
+							var isFillWidth=letterBox(gameFrame,gameAspect);
+							var borderWidth=1;
+							if(isFillWidth) {
+								gameFrame.style.borderWidth=(borderWidth*1/gameAspect)+"vw";
+							}
+							else {
+								gameFrame.style.borderWidth=borderWidth+"vh";
+							}
+
+							//キャンバスリサイズ
+							canvasFitParent(gameInstance.Module.canvas);
+						}
+
+						//背景リサイズ
+						{
+							var bgRate=2;
+							bg.style.width=(gameFrame.clientHeight*bgRate)+"px";
+							bg.style.height=(gameFrame.clientHeight*bgRate)+"px";
+						}
+
+					}
+
+					window.addEventListener('resize',resizeCallback,false);
+					resizeCallback();
+				}
+			}
+		}
+
+	</script>
+
+</head>
+
+	<body>
+
+		<div id="All">
+
+			<div id="Bg">
+				<div id="Logo"></div>
+			</div>
+
+			<div id="GameFrame">
+				<div id="Game"></div>
+			</div>
+
+		</div>
+
+	</body>
+
+</html>

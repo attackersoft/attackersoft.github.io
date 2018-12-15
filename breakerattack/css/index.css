@@ -75,8 +75,9 @@ background-color: #99ddcc;
 	padding-bottom: 1%;
 	}
 		#AppIcon{
-		width: 12%;
-		padding-top: 12%;
+		width: 13.2%;
+		padding-top: 13.2%;
+		margin-bottom: 0.8%;
 		background-image: url("../img/appicon.png");
 		background-size: cover;
 		display: inline-block;
@@ -87,23 +88,53 @@ background-color: #99ddcc;
 		text-align: left;
 		background-color: #cc3366;
 		vertical-align:  top;
+		vertical-align:  middle;
 		color: #777777;
 		}
 			#AppTitle{
 			color: #555555;
 			}
 
-		/*
 		#ButtonList{
+		width: 18%;
+		margin-left: 4%;
+		display: inline-block;
+		vertical-align:  middle;
 		}
-			#ButtonGooglePlay{
-			}
-			#ButtonAppStore{
+
+			.ButtonLink{	
+			width:100%;
+			padding-top: 30%;
+			margin: 4% 0%;
+			background-repeat:no-repeat;
+			background-size:100% 100%;
+			display:block;
 			}
 
-		#ButtonTrialVersion{
+
+			#ButonGooglePlay{		
+			background-image:url("../img/google-play-badge.png");
+			}
+
+			#ButtonAppStore{		
+			background-image:url("../img/app-store-badge.png");
+			}
+			
+		#ButtonList2{
+		width: 19%;
+		margin-left: 4%;
+		display: inline-block;
+		vertical-align:  middle;
 		}
-		*/
+
+			#ButtonTrialVersion{
+			width: 100%;
+			padding-top: 60%;
+			background-image:url("../img/trial.png");
+			background-repeat:no-repeat;
+			background-size:100% 100%;
+			display:block;
+			}
 
 	#AppScreenShotList{
 	background-color: #cc3399;
