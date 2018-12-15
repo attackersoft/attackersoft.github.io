@@ -41,8 +41,19 @@
 			}, passiveSupported ? { passive: false } : false);
 
 			//回転禁止
-			window.addEventListener("orientationchange", function listener(e) {
-				e.preventDefault();
+			window.addEventListener("orientationchange", function(){
+				var deg;
+				switch (window.orientation) {
+					case -90:
+						deg = 90;  break;
+					case 0:
+						deg = 0;   break;
+					case 90:
+						deg = -90; break;
+					case 180:
+						deg = 180; break;
+				}
+				document.documentElement.style.transform = "rotate(" + deg + "deg)";
 			}, passiveSupported ? { passive: false } : false);
 		}
 
