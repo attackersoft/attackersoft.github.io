@@ -35,9 +35,9 @@
 				}));
 			} catch(err) {}
 
-			document.addEventListener('touchstart', function listener(e) {
-				e.preventDefault();
-			}, passiveSupported ? { passive: false } : false);
+			//document.addEventListener('touchstart', function listener(e) {
+			//	e.preventDefault();
+			//}, passiveSupported ? { passive: false } : false);
 			document.addEventListener('touchmove', function listener(e) {
 				e.preventDefault();
 			}, passiveSupported ? { passive: false } : false);
