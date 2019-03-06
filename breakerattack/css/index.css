@@ -136,10 +136,10 @@ background-color: #99ddcc;
 			
 	#Movie{
 	position: relative;
-	margin: 0px auto;
+	margin: 1% auto;
 	padding: 0px;
-	width: 90%;
-	padding-top: 50.625%;
+	width: 80%;
+	padding-top: 45%;
 	}
 		#Youtube{
 			position: absolute;
