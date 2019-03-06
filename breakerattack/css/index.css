@@ -58,9 +58,7 @@ background-color: #ffffff;
 
 	#TopImage{
 	width: 100%;
-	padding-top: 56.25%;
-	background-image: url("../img/top.png");/* content方式だと、読み込みが完了するまでサイズが決まらないため、画面がびかっとなる。しかもIEだと表示されない*/
-	background-size: cover;
+	height: auto;
 	}
 
 
@@ -135,6 +133,21 @@ background-color: #99ddcc;
 			background-size:100% 100%;
 			display:block;
 			}
+			
+	#Movie{
+	position: relative;
+	margin: 0px auto;
+	padding: 0px;
+	width: 60%;
+	padding-top: 33.75%;
+	}
+		#Youtube{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
 
 	#AppScreenShotList{
 	background-color: #cc3399;
