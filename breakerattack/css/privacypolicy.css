@@ -24,6 +24,10 @@ box-sizing: border-box;
 background-color: #99ff00;
 }
 
+a{
+word-wrap: break-word;
+}
+
 #All{
 width: 100%;
 }
